@@ -5,6 +5,7 @@ import Register from "./pages/Auth/Register";
 import TutorialsList from "./components/TutorialsList";
 import AddTutorial from "./components/AddTutorial";
 import Tutorial from "./components/Tutorial";
+import ProtectedRoute from "./ProtectedRoutes";
 
 function RoutesApp() {
   return (
@@ -13,7 +14,14 @@ function RoutesApp() {
         <Route path="/" element={<TutorialsList />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/orders" element={<TutorialsList />} />
+        <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <TutorialsList />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/products" element={<AddTutorial />} />
         <Route path="/support" element={<Tutorial />} />
       </Routes>

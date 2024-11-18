@@ -1,13 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
-import tutorialReducer from './slices/tutorials';
+import { configureStore } from "@reduxjs/toolkit";
+import loginSlice from "./pages/Auth/loginSlice";
 
-const reducer = {
-  tutorials: tutorialReducer
-}
-
-const store = configureStore({
-  reducer: reducer,
-  devTools: true,
-})
-
-export default store;
+export const store = configureStore({
+  reducer: {
+    auth: loginSlice
+  },
+});

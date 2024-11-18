@@ -8,7 +8,7 @@ import RoutesApp from "./RoutesApp";
 function App() {
   return (
     <Router>
-      <Layout />
+      {/* <Layout /> */}
       <RoutesApp />
     </Router>
   );
